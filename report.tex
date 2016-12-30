@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{scrartcl}
+
+\title{Report}
+
+\author{Jan Laermann}
+
+\date{}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage[]{hyperref}
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usepackage{graphicx} 
+\usepackage{dsfont}
+% \usepackage{csvsimple}
+\setcounter{secnumdepth}{4}
+
+%our very own pseudo algorithm environment! highly customizable! referencable! ;)
+\newcounter{pseudoalgcounter} 
+\newenvironment{pseudoalg}[1]{\refstepcounter{pseudoalgcounter} \vspace{1em} \noindent \textbf{Algorithm \arabic{pseudoalgcounter}: }#1 \begin{adjustwidth}{3em}{0em}}{\end{adjustwidth}\vspace{1em}}
+
+\newcounter{examplecounter} 
+\newenvironment{example}[1]{\refstepcounter{examplecounter} \noindent \textbf{Example \arabic{examplecounter}: }#1}{}
+
+
+\begin{document}
+%\maketitle  
+\begin{center}
+  \large
+  \qquad  Jan Laermann  \qquad 
+\normalsize
+\vspace{.5 cm}
+\hrule
+\vspace{5 cm}
+\Huge{\textbf{Fancy Report title}} \\
+\normalsize
+\vspace{1 cm}
+25 April 2016
+\end{center}
+\thispagestyle{empty}
+\vspace{9.5 cm}
+\hrule 
+\begin{center}
+Report submitted in partial fulfillment
+of the requirements for a graded credit in 
+\textless course \textgreater \\ at the \\ \textless university \textgreater.
+\end{center}
+\newpage
+\input{sections/abstract}
+\newpage
+\tableofcontents
+
+\include{sections/intro}
+\include{sections/sec1}
+\include{sections/discussion}
+
+\bibliographystyle{ieeetr}
+\bibliography{lit.bib}
+
+\begin{appendix}
+\include{sections/appendix}
+\end{appendix}
+
+\end{document}
